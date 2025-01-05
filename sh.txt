@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "Removing existing code folder"
+rm -rf /apps/fpv/code/fed
+cd /apps/fpv/code/
+
+echo "Clonning in repo"
+git clone -b main https://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@github.com/freeviewporn/fpv
+
+echo "running npm install"
+npm install
+
+echo "Running npm run build"
+npm run build
+
+echo "killing existing process"
+ps aux | grep npm | grep -v grep | awk '{print $2}' | xargs kill -9
+
+echo "removing existing fed folder"
+rm -rf /app/fpv/fed/
+
+echo "Copying code folder into main folder"
+cp -r /apps/fpv/code/fed/fpv/ /app/fpv/fed/
+
+echo "starting node process again"
+cd /app/fpv/fed/
+nohup npm run start &

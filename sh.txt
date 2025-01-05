@@ -5,7 +5,7 @@ rm -rf /apps/fpv/code/fed
 cd /apps/fpv/code/
 
 echo "Clonning in repo"
-git clone -b main https://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@github.com/freeviewporn/fpv
+git clone -b main https://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@github.com/freeviewporn/fpv
 
 echo "running npm install"
 npm install

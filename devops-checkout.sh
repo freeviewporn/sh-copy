@@ -4,4 +4,4 @@
 cd /apps/fvp/devops
 
 echo "Cloning in repo"
-git clone -b main https://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@github.com/freeviewporn/fvp
+git clone -b main https://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@github.com/freeviewporn/fvp
